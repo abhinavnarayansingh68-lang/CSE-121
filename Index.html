@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C.P.VIDYA NIKETAN</title>
+  <!--
+    Simple and Responsive School Website
+    - Blue/white color scheme
+    - Responsive layout for all screens
+    - Internal CSS and JS
+    - Well-commented for beginners
+  -->
+  <style>
+    /* RESET STYLES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7faff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* HEADER AND NAV */
+    header {
+      background: #175dc5;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: #083a74;
+    }
+
+    /* MAIN SECTIONS */
+    section {
+      padding: 40px 0;
+      min-height: 280px;
+    }
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .home img {
+      width: 90%;
+      max-width: 500px;
+      margin: 25px 0;
+      border-radius: 8px;
+      box-shadow: 0 5px 16px rgba(23, 93, 197, 0.08);
+    }
+
+    /* BUTTON STYLE */
+    .btn {
+      display: inline-block;
+      background: #175dc5;
+      color: #fff;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: #083a74;
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    /* SECTION STYLES */
+    .about, .courses, .contact {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(23, 93, 197, 0.04);
+      margin-bottom: 25px;
+    }
+    .about p, .contact p {
+      font-size: 1.1rem;
+    }
+
+    /* COURSES */
+    .courses-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 18px;
+    }
+    .course {
+      background: #eff5fe;
+      border: 1px solid #d7e4fc;
+      border-radius: 8px;
+      flex: 1 1 220px;
+      min-width: 205px;
+      max-width: 320px;
+      padding: 18px;
+    }
+    .course h3 {
+      color: #175dc5;
+      margin-bottom: 10px;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 410px;
+      margin: 0 auto;
+      padding-top: 12px;
+    }
+    .contact-form label {
+      font-weight: 600;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #b8dafc;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact-form textarea {
+      min-height: 80px;
+      max-height: 180px;
+    }
+
+    /* FORM ERROR MESSAGE */
+    .error-message {
+      color: #c52033;
+      font-size: 0.98rem;
+      display: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #083a74;
+      color: #fff;
+      text-align: center;
+      padding: 17px 0;
+      font-size: 1rem;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 760px) {
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+      }
+      .courses-list {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+      section {
+        padding: 28px 0;
+      }
+      .about, .courses, .contact {
+        padding: 9px 4px;
+      }
+      .home img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER AND NAVIGATION -->
+  <header>
+    <div class="container">
+      <h1>C.P.VIDYA NIKETAN</h1>
+      <nav>
+        <ul>
+          <!-- Navigation menu links scroll to different sections -->
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="home container">
+    <h2>Welcome to C.P.VIDYA NIKETAN!</h2>
+    <p>Your journey to knowledge and success starts here.</p>
+    <!-- Banner image (you can replace the src link with your school's image) -->
+    <img src="https://th.bing.com/th/id/OIP.t4qCq7SZOBJLWFqgzPNcCgHaHa?w=108&h=108&c=1&bgcl=f8663b&r=0&o=7&dpr=1.4&pid=ImgRC&rm=3" alt="School Banner">
+    <!-- Interactive button (Requirement 4.3) -->
+    <button class="btn" onclick="displayWelcome()">Click me!</button>
+    <div id="welcome-display" style="margin-top:15px; color: #175dc5; font-size:1.15rem;"></div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about container">
+    <h2>About Us</h2>
+    <p>
+      C.P.VIDYA NIKETAN is committed to providing high-quality education in a safe, nurturing environment.
+      Our experienced faculty and modern facilities help students develop academically, socially, and emotionally,
+      preparing them for future success.
+    </p>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section id="courses" class="courses container">
+    <h2>Our Courses</h2>
+    <div class="courses-list">
+      <div class="course">
+        <h3>Mathematics</h3>
+        <p>
+          Comprehensive classes covering algebra, geometry, calculus, and applied mathematics, fostering logical thinking and problem solving.
+        </p>
+      </div>
+      <div class="course">
+        <h3>Science</h3>
+        <p>
+          Engaging lessons in physics, chemistry, and biology, featuring hands-on experiments and exploration of the scientific method.
+        </p>
+      </div>
+      <div class="course">
+        <h3>Computer Science</h3>
+        <p>
+          Introduction to programming, algorithms, and digital literacy using modern tools to help students thrive in the technology-driven world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact container">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to enroll? Fill out the form below!</p>
+    <form id="contactForm" class="contact-form" autocomplete="off">
+      <div>
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <div id="nameError" class="error-message">Please enter your name.</div>
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <div id="emailError" class="error-message">Enter a valid email address.</div>
+      </div>
+      <div>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Type your message..."></textarea>
+        <div id="messageError" class="error-message">Please enter your message.</div>
+      </div>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Example School. All rights reserved.
+  </footer>
+
+  <!-- INTERNAL JAVASCRIPT -->
+  <script>
+    // Function: Display welcome message when Home button is clicked
+    function displayWelcome() {
+      document.getElementById('welcome-display').textContent = 'Welcome to our school!';
+    }
+
+    // Function: Validate email pattern using regex
+    function isValidEmail(email) {
+      // Very basic email pattern (for demonstration, not for production use)
+      return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    }
+
+    // Form Validation and Submission Handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent actual form submission
+
+      // Get field values
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var message = document.getElementById('message').value.trim();
+
+      // Clear previous errors
+      var hasError = false;
+      document.getElementById('nameError').style.display = 'none';
+      document.getElementById('emailError').style.display = 'none';
+      document.getElementById('messageError').style.display = 'none';
+
+      // Validate Name
+      if (name === '') {
+        document.getElementById('nameError').style.display = 'block';
+        hasError = true;
+      }
+      // Validate Email
+      if (!isValidEmail(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        hasError = true;
+      }
+      // Validate Message
+      if (message === '') {
+        document.getElementById('messageError').style.display = 'block';
+        hasError = true;
+      }
+
+      // If all fields are valid, show a success message and reset the form
+      if (!hasError) {
+        alert('Thank you for contacting us, ' + name + '! We have received your message.');
+        this.reset();
+      }
+    });
+
+    // Optional: Highlight nav links on scroll (simple)
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 70;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
